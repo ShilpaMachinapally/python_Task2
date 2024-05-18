@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            
+        }
+        #clock {
+            font-size: 3em;
+            margin-top: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">{{ time }}</div>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // Add leading zeros if necessary
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("clock").innerHTML = timeString;
+        }
+
+        // Update the clock every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to display the time immediately
+        updateTime();
+    </script>
+    <h1 style="color: rgb(10, 79, 32);"> PYTHON TIMER PROGRAM</h1>
+</body>
+</html>
